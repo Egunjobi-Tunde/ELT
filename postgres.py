@@ -7,17 +7,13 @@ playlist_id = get_playlist_id()
 video_ids = get_video_ids(playlist_id)
 video_data = extract_video_data(video_ids)
 
-# then insert video_data into Postgres
-
 
 load_dotenv()   
 
-#load_dotenv(dotenv_path= './.env')
-#print(os.getenv("DB_PASSWORD"))
 conn = psycopg2.connect(
     dbname=os.getenv("DB_NAME"),
     user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),  # can be empty
+    password=os.getenv("DB_PASSWORD"),  
     host=os.getenv("DB_HOST"),
     port=os.getenv("DB_PORT"),
 )
