@@ -1,7 +1,7 @@
 import psycopg2
 import os
 from dotenv import load_dotenv
-from dags.video_stat import extract_video_data, get_video_ids, get_playlist_id
+from dags.API.video_stat import extract_video_data, get_video_ids, get_playlist_id
 
 playlist_id = get_playlist_id()
 video_ids = get_video_ids(playlist_id)
